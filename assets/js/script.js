@@ -10,19 +10,6 @@ $(function () {
     $('#navMenuMobile').toggleClass('hidden');
   });
 
-  $('#themeToggle').on('click', function () {
-    var isDark = document.documentElement.classList.contains('dark');
-    if (isDark) {
-      document.documentElement.classList.remove('dark');
-      document.documentElement.classList.add('light');
-      localStorage.setItem('theme', 'light');
-    } else {
-      document.documentElement.classList.add('dark');
-      document.documentElement.classList.remove('light');
-      localStorage.setItem('theme', 'dark');
-    }
-  });
-
   $(document).on('click', 'a[href^="#"]', function (e) {
     var href = $(this).attr('href');
     if (href.length > 1 && $(href).length) {
@@ -58,14 +45,19 @@ $(function () {
       });
     });
   }
-  // Toggle equalizer play/pause on passions hero
-  $(document).on('click', '.js-play-toggle', function(){
-    $('#eq-bars').toggleClass('paused');
-    var $icon = $(this).find('.material-symbols-outlined');
-    if ($('#eq-bars').hasClass('paused')) {
-      $icon.text('play_arrow');
-    } else {
-      $icon.text('pause');
+
+    // Déclenche l'animation d'apparition sur les éléments marqués data-animate
+    var revealEls = document.querySelectorAll('[data-animate]');
+    if (revealEls.length) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+
+      revealEls.forEach(function (el) { observer.observe(el); });
     }
-  });
 });

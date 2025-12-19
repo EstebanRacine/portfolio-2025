@@ -14,6 +14,7 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 
     <link rel="stylesheet" href="assets/css/base.css" />
 
@@ -58,13 +59,18 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
         <button id="navToggle" class="md:hidden text-white">
           <span class="material-symbols-outlined">menu</span>
         </button>
-        <div id="navMenu" class="hidden md:flex items-center gap-8">
+        <div id="navMenu" class="hidden md:flex items-center gap-8 transition-all">
           <a class="relative text-sm <?= is_active('index.php',$current) ?>" href="index.php">Accueil</a>
           <a class="relative text-sm <?= is_active('projets.php',$current) ?>" href="projets.php">Projets</a>
           <a class="relative text-sm <?= is_active('passions.php',$current) ?>" href="passions.php">Passions</a>
           <a class="relative text-sm <?= is_active('cv.php',$current) ?>" href="cv.php">CV</a>
           <a class="relative text-sm <?= is_active('contact.php',$current) ?>" href="contact.php">Contact</a>
-          <button id="themeToggle" class="ml-2 h-9 px-3 rounded-lg bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/30 hover:bg-[var(--color-primary)] hover:text-white transition-all">Thème</button>
+          <button
+            class="flex items-center justify-center gap-2 rounded-lg h-9 px-4 bg-primary hover:bg-primary/90 transition-all text-white text-sm font-bold tracking-wide shadow-[0_0_15px_rgba(238,43,238,0.3)]"
+          >
+            <span class="material-symbols-outlined text-[18px]">download</span>
+            <span>Mon CV</span>
+          </button>
         </div>
       </div>
       <div id="navMenuMobile" class="md:hidden hidden border-t border-[var(--color-border-dark)] bg-[#181118]">
@@ -77,4 +83,4 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
         </div>
       </div>
     </nav>
-    <main class="pt-20">
+    <main class="">

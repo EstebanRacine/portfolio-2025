@@ -90,6 +90,12 @@ html.light body { background: var(--color-bg-light); color: #0f0f0f; }
 .equalizer span:nth-child(9) { animation-delay: .8s; }
 .equalizer span:nth-child(10) { animation-delay: .9s; }
 
+/* Entrée progressive des éléments */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; transition-delay: var(--delay, 0s); }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+.reveal.scale { transform: translateY(24px) scale(.98); }
+.reveal.scale.in-view { transform: translateY(0) scale(1); }
+
 /* Hover zoom pour cartes cinéma */
 .hover-zoom { position: relative; overflow: hidden; }
 .hover-zoom img { transition: transform 1.2s ease, opacity .6s ease; transform: scale(1.02); }
