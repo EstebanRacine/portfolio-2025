@@ -88,6 +88,65 @@ html.light body { background: var(--color-bg-light); color: #0f0f0f; }
 .equalizer span:nth-child(7) { animation-delay: .6s; }
 .equalizer span:nth-child(8) { animation-delay: .7s; }
 .equalizer span:nth-child(9) { animation-delay: .8s; }
+
+/* Mobile Nav Animations */
+#navMenuMobile { transform-origin: top; }
+
+/* Items start hidden until animation */
+#navMenuMobile .flex.flex-col > * { opacity: 0; }
+
+@keyframes menuScaleIn {
+  0% { opacity: 0; transform: translateY(-8px) scaleY(0.98); }
+  100% { opacity: 1; transform: translateY(0) scaleY(1); }
+}
+
+@keyframes menuScaleOut {
+  0% { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0; }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+
+@keyframes itemFadeUp {
+  0% { opacity: 0; transform: translateY(-6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+#navMenuMobile.mobile-menu-enter {
+  animation: menuScaleIn 300ms ease-in-out forwards;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+#navMenuMobile.mobile-menu-exit {
+  animation: menuScaleOut 200ms ease-out forwards;
+  background-color: transparent !important;
+  transition: background-color 150ms ease-out;
+}
+
+/* Items fade out instantly */
+#navMenuMobile.mobile-menu-exit .flex.flex-col > * {
+  opacity: 0;
+  transition: opacity 100ms ease-out;
+}
+
+/* Stagger items inside the mobile menu - start with 60ms base delay after menu opens */
+#navMenuMobile.mobile-menu-enter .flex.flex-col > * { animation: itemFadeUp 300ms ease-out forwards; }
+#navMenuMobile.mobile-menu-enter .flex.flex-col > *:nth-child(1) { animation-delay: 60ms; }
+#navMenuMobile.mobile-menu-enter .flex.flex-col > *:nth-child(2) { animation-delay: 100ms; }
+#navMenuMobile.mobile-menu-enter .flex.flex-col > *:nth-child(3) { animation-delay: 140ms; }
+#navMenuMobile.mobile-menu-enter .flex.flex-col > *:nth-child(4) { animation-delay: 180ms; }
+#navMenuMobile.mobile-menu-enter .flex.flex-col > *:nth-child(5) { animation-delay: 220ms; }
+
+/* Overlay behind mobile menu */
+.nav-overlay {
+  position: fixed; inset: 0; z-index: 40; opacity: 0;
+  background: rgba(18, 12, 24, 0.55);
+  transition: opacity 250ms ease;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+.nav-overlay.in { opacity: 1; }
 .equalizer span:nth-child(10) { animation-delay: .9s; }
 
 /* Entrée progressive des éléments */
@@ -110,3 +169,26 @@ html.light body { background: var(--color-bg-light); color: #0f0f0f; }
 
 /* Text glow */
 .text-glow { text-shadow: 0 0 10px rgba(238, 43, 238, .5); }
+
+
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #ee2bee, #c084fc);
+}
+.timeline-line {
+    background: linear-gradient(to bottom, #ee2bee 0%, #543b54 50%, #221022 100%);
+}.reveal-text {
+    opacity: 0;
+    animation: reveal 1s ease-out forwards;
+}
+@keyframes reveal {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}@keyframes fillBar {
+    from { width: 0%; }
+}
+.skill-fill {
+    animation: fillBar 1.5s ease-out forwards;
+}

@@ -15,10 +15,11 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-
+    <link rel="shortcut icon" href="assets/img/LogoOnglet.png">
     <link rel="stylesheet" href="assets/css/base.css" />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: 'class',
@@ -42,6 +43,11 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
               xl: '0.75rem',
               full: '9999px',
             },
+            animation: {
+              "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              float: "float 6s ease-in-out infinite",
+              flicker: "flicker 3s linear infinite",
+            },
           },
         },
       }
@@ -62,24 +68,27 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
         <div id="navMenu" class="hidden md:flex items-center gap-8 transition-all">
           <a class="relative text-sm <?= is_active('index.php',$current) ?>" href="index.php">Accueil</a>
           <a class="relative text-sm <?= is_active('projets.php',$current) ?>" href="projets.php">Projets</a>
-          <a class="relative text-sm <?= is_active('passions.php',$current) ?>" href="passions.php">Passions</a>
           <a class="relative text-sm <?= is_active('cv.php',$current) ?>" href="cv.php">CV</a>
+          <a class="relative text-sm <?= is_active('passions.php',$current) ?>" href="passions.php">Passions</a>
           <a class="relative text-sm <?= is_active('contact.php',$current) ?>" href="contact.php">Contact</a>
-          <button
+          <a
+            href="assets/docs/CV_Esteban_Racine.pdf"
+            download
             class="flex items-center justify-center gap-2 rounded-lg h-9 px-4 bg-primary hover:bg-primary/90 transition-all text-white text-sm font-bold tracking-wide shadow-[0_0_15px_rgba(238,43,238,0.3)]"
+            title="Télécharger le CV (PDF)"
           >
             <span class="material-symbols-outlined text-[18px]">download</span>
             <span>Mon CV</span>
-          </button>
+          </a>
         </div>
       </div>
       <div id="navMenuMobile" class="md:hidden hidden border-t border-[var(--color-border-dark)] bg-[#181118]">
         <div class="px-5 py-3 flex flex-col gap-3">
-          <a class="text-sm" href="index.php">Accueil</a>
-          <a class="text-sm" href="projets.php">Projets</a>
-          <a class="text-sm" href="passions.php">Passions</a>
-          <a class="text-sm" href="cv.php">CV</a>
-          <a class="text-sm" href="contact.php">Contact</a>
+          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'index.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="index.php">Accueil</a>
+          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'projets.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="projets.php">Projets</a>
+          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'cv.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="cv.php">CV</a>
+          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'passions.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="passions.php">Passions</a>
+          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'contact.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="contact.php">Contact</a>
         </div>
       </div>
     </nav>
