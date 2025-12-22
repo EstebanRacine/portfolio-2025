@@ -246,14 +246,14 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
 </main>
 
 <!-- Modale pour l'image en grand -->
-<div id="image-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4">
+<div id="image-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4 group">
   <button id="close-modal" class="absolute top-6 right-6 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white">
     <span class="material-symbols-outlined text-2xl">close</span>
   </button>
-  <button id="modal-prev" class="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white">
+  <button id="modal-prev" class="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 transition-all text-white opacity-100 md:opacity-0 md:group-hover:opacity-100">
     <span class="material-symbols-outlined text-2xl">arrow_back</span>
   </button>
-  <button id="modal-next" class="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white">
+  <button id="modal-next" class="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 transition-all text-white opacity-100 md:opacity-0 md:group-hover:opacity-100">
     <span class="material-symbols-outlined text-2xl">arrow_forward</span>
   </button>
   <div class="max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center">
@@ -328,10 +328,10 @@ $(function() {
     
     if (projectImages.length > 1) {
       carouselHtml += `
-        <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 transition-all text-white opacity-0 group-hover:opacity-100">
+        <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 transition-all text-white opacity-100 md:opacity-0 md:group-hover:opacity-100">
           <span class="material-symbols-outlined">arrow_back</span>
         </button>
-        <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 transition-all text-white opacity-0 group-hover:opacity-100">
+        <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 transition-all text-white opacity-100 md:opacity-0 md:group-hover:opacity-100">
           <span class="material-symbols-outlined">arrow_forward</span>
         </button>
         <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">`;

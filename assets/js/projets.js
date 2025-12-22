@@ -412,7 +412,7 @@ const projets = [
     gradient: "from-orange-600/20 to-yellow-500/20",
     images: [
       "assets/img/projects/menotey/home-menotey.png",
-      "assets/img/projects/menotey/-info.png",
+      "assets/img/projects/menotey/menotey-info.png",
       "assets/img/projects/menotey/menotey-paiement.png",
     ], 
     features: [
