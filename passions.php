@@ -63,60 +63,27 @@
             ></div>
             <div class="grid lg:grid-cols-2 gap-0 lg:gap-8">
               <div
-                class="relative h-96 lg:h-auto overflow-hidden bg-black flex items-center justify-center group"
+                class="relative h-96 lg:h-auto overflow-hidden bg-black flex items-center justify-center"
               >
                 <div
-                  class="absolute inset-0 opacity-40 mix-blend-screen transition-transform duration-700 group-hover:scale-110"
+                  class="absolute inset-0 opacity-30"
                   style="
-                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCIsX9jcm0W3JpFidDdlbvWhg6yoBWFmPnmiNG8Ns4oDnMkzIoKGJXah3zEbqfN3Yat9UG0iHKAlKwK2xuPXHKaA-OrxZtVaBrVNqT93OwSsEnZfTUS-7BmwIKeFn6OxuNN3bI51qaDSbJQRzqid4BBsgeT-3xWnEbwwl0MGXyJafbxg9A2eY63IjCJNYbbjrip9GxXol5ooEbotGRnsQ7iB8bJ4M06q1cvavmplBKBh1lWV-G9aUV2P5j-LJKooaQeGFQr01_ulIXF&quot;);
-                    background-size: cover;
-                    background-position: center;
+                    background: radial-gradient(circle at 20% 20%, rgba(238, 43, 238, 0.25), transparent 35%),
+                      radial-gradient(circle at 80% 30%, rgba(68, 118, 255, 0.25), transparent 35%),
+                      radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.1), transparent 45%);
                   "
                 ></div>
-                <div
-                  id="eq-bars"
-                  class="absolute bottom-0 left-0 right-0 h-1/2 flex items-end justify-center gap-1 px-8 pb-8 z-10 opacity-70"
-                >
-                  <div
-                    class="w-2 bg-primary rounded-t-sm h-12 animate-[pulse_1s_ease-in-out_infinite]"
-                  ></div>
-                  <div
-                    class="w-2 bg-primary rounded-t-sm h-24 animate-[pulse_1.2s_ease-in-out_infinite] animation-delay-100"
-                  ></div>
-                  <div
-                    class="w-2 bg-primary rounded-t-sm h-16 animate-[pulse_0.8s_ease-in-out_infinite] animation-delay-200"
-                  ></div>
-                  <div
-                    class="w-2 bg-primary rounded-t-sm h-32 animate-[pulse_1.5s_ease-in-out_infinite] animation-delay-300"
-                  ></div>
-                  <div
-                    class="w-2 bg-primary rounded-t-sm h-20 animate-[pulse_1.1s_ease-in-out_infinite] animation-delay-150"
-                  ></div>
-                  <div
-                    class="w-2 bg-primary rounded-t-sm h-40 animate-[pulse_1.3s_ease-in-out_infinite] animation-delay-400"
-                  ></div>
-                  <div
-                    class="w-2 bg-primary rounded-t-sm h-28 animate-[pulse_0.9s_ease-in-out_infinite] animation-delay-250"
-                  ></div>
-                  <div
-                    class="w-2 bg-primary rounded-t-sm h-14 animate-[pulse_1.4s_ease-in-out_infinite] animation-delay-500"
-                  ></div>
-                  <div
-                    class="w-2 bg-primary rounded-t-sm h-22 animate-[pulse_1s_ease-in-out_infinite] animation-delay-350"
-                  ></div>
-                  <div
-                    class="w-2 bg-primary rounded-t-sm h-36 animate-[pulse_1.6s_ease-in-out_infinite] animation-delay-600"
-                  ></div>
-                </div>
-                <div
-                  class="relative z-20 size-20 rounded-full border-2 border-primary/50 bg-black/50 backdrop-blur-sm flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 hover:border-primary hover:bg-primary/20 shadow-[0_0_30px_rgba(238,43,238,0.3)] js-play-toggle"
-                  role="button"
-                  aria-label="Mettre en pause ou lire l'animation"
-                >
-                  <span
-                    class="material-symbols-outlined text-4xl text-white ml-1"
-                    >pause</span
-                  >
+                <div class="relative z-10 w-full max-w-[520px] px-6 py-8">
+                  <iframe
+                    title="deezer-widget"
+                    src="https://widget.deezer.com/widget/dark/playlist/14722128581?tracklist=false"
+                    width="100%"
+                    height="360"
+                    frameborder="0"
+                    allowtransparency="true"
+                    allow="encrypted-media; clipboard-write"
+                    class="rounded-2xl border border-border-dark shadow-[0_0_30px_rgba(238,43,238,0.25)] h-[360px] lg:h-[500px]"
+                  ></iframe>
                 </div>
               </div>
               <div class="p-8 lg:p-12 flex flex-col justify-center">
@@ -157,12 +124,15 @@
                     >Rock</span
                   >
                 </div>
-                <button
+                <a
+                  href="https://link.deezer.com/s/31YbSzOI6hsm4rjgtm9OH"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg bg-white text-black px-6 py-3 text-sm font-bold hover:bg-gray-200 transition-colors shadow-lg shadow-white/10"
                 >
                   <span class="material-symbols-outlined">headphones</span>
                   Écouter ma Playlist
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -311,7 +281,7 @@
                 Trophy Hunter
               </h5>
               <p class="text-gray-500 text-xs">
-                +42 platines débloquées
+                +42 trophés platines débloqués
               </p>
             </div>
           </div>

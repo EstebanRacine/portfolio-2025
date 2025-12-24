@@ -183,13 +183,13 @@
                 </div>
               </a>
 
-              <a href="mailto:contact@estebanracine.fr" class="flex items-center gap-4 p-4 bg-[#1a1625] rounded-xl border border-[var(--color-border-dark)] hover:border-primary transition-all group">
+              <a href="mailto:esteban.racineecole@gmail.com" class="flex items-center gap-4 p-4 bg-[#1a1625] rounded-xl border border-[var(--color-border-dark)] hover:border-primary transition-all group">
                 <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500/20 to-green-600/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <span class="material-symbols-outlined text-green-400">mail</span>
                 </div>
                 <div>
                   <p class="font-semibold text-white">Email direct</p>
-                  <p class="text-xs text-[var(--color-text-muted)]">contact@estebanracine.fr</p>
+                  <p class="text-xs text-[var(--color-text-muted)]">esteban.racineecole@gmail.com</p>
                 </div>
               </a>
             </div>
