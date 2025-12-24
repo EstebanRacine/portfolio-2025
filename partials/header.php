@@ -10,6 +10,13 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= htmlspecialchars($pageTitle) ?></title>
     <meta name="description" content="Portfolio moderne d'Esteban Racine : projets, passions, CV et contact." />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N7MJDM2J');</script>
+    <!-- End Google Tag Manager -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -53,7 +60,22 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
       }
     </script>
   </head>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DGNMBFFVZ2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DGNMBFFVZ2');
+  </script>
+
   <body class="bg-[var(--color-bg-light)] dark:bg-[var(--color-bg-dark)] text-slate-900 dark:text-white font-display min-h-screen overflow-x-hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7MJDM2J"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-[var(--color-border-dark)] bg-[#181118]/80">
       <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
         <a href="index" class="flex items-center gap-3 text-white">

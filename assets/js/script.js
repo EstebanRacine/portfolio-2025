@@ -102,6 +102,7 @@ $(function () {
   }
 
     // Déclenche l'animation d'apparition sur les éléments marqués data-animate
+    // Petit délai global pour laisser le visuel charger avant les reveals
     var revealEls = document.querySelectorAll('[data-animate]');
     if (revealEls.length) {
       var observer = new IntersectionObserver(function (entries) {
@@ -113,7 +114,10 @@ $(function () {
         });
       }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
 
-      revealEls.forEach(function (el) { observer.observe(el); });
+      var revealInitDelay = 250; // ms
+      setTimeout(function () {
+        revealEls.forEach(function (el) { observer.observe(el); });
+      }, revealInitDelay);
     }
 
     // Toggle equalizer play/pause on passions hero

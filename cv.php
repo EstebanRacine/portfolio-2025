@@ -7,17 +7,17 @@
       <div class="flex flex-col-reverse md:grid md:grid-cols-2 gap-10 items-center md:mt-6">
         <div class="flex flex-col gap-6 text-left z-10">
           <div class="flex flex-col gap-2">
-            <span class="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold w-fit uppercase tracking-widest">
+            <span class="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold w-fit uppercase tracking-widest reveal" data-animate style="--delay: 0s;">
               Développeur Web
             </span>
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tighter">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tighter reveal" data-animate style="--delay: 0.08s;">
               Esteban <span class="text-gradient">Racine.</span>
             </h1>
-            <p class="text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-lg mt-4">
+            <p class="text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-lg mt-4 reveal" data-animate style="--delay: 0.16s;">
               Passionné par le développement web et logiciel. Actuellement en Mastère MAALSI au CESI de Dijon, je perfectionne mes compétences techniques à travers des projets concrets et mon alternance.
             </p>
           </div>
-          <div class="flex flex-wrap gap-4 mt-2">
+          <div class="flex flex-wrap gap-4 mt-2 reveal" data-animate style="--delay: 0.24s;">
             <a href="projets" class="h-12 px-6 rounded-lg bg-primary hover:bg-primary/90 text-white font-bold transition-all shadow-[0_0_20px_rgba(238,43,238,0.4)] flex items-center gap-2 group">
               <span>Voir mes projets</span>
               <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -28,10 +28,23 @@
           </div>
         </div>
         <div class="w-full h-full flex justify-center md:justify-end relative group">
-          <div class="relative w-full max-w-md aspect-square">
+          <div class="relative w-full max-w-md aspect-square reveal scale" data-animate style="--delay: 0.12s;">
             <div class="absolute inset-0 bg-gradient-to-tr from-primary to-purple-600 rounded-2xl opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"></div>
             <div class="absolute -inset-1 border border-primary/30 rounded-2xl z-0 transition-transform duration-500 group-hover:scale-105"></div>
-            <div class="relative h-full w-full rounded-2xl overflow-hidden bg-surface-dark border border-white/10 z-10" style="background-image: url('assets/img/profile-cv.jpg'); background-size: cover; background-position: center;">
+            <div
+              class="relative h-full w-full rounded-2xl overflow-hidden bg-surface-dark border border-white/10 z-10"
+              data-bg-src="assets/img/profile-cv.jpg"
+            >
+              <div
+                class="absolute inset-0 opacity-0 transition-opacity duration-700 bg-center bg-cover will-change-transform will-change-opacity"
+                data-bg-image
+                aria-hidden="true"
+              ></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-purple-600/15 blur-xl opacity-70 transition-opacity duration-500"
+                data-bg-placeholder
+                aria-hidden="true"
+              ></div>
               <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-60"></div>
             </div>
             <div class="absolute -bottom-6 -left-6 bg-surface-dark border border-white/10 p-4 rounded-xl shadow-xl flex items-center gap-3 z-20 backdrop-blur-md">
@@ -49,15 +62,15 @@
     </section>
 
     <section class="py-12" id="experience">
-      <div class="flex items-center gap-4 mb-10">
+      <div class="flex items-center gap-4 mb-10 reveal" data-animate style="--delay: 0s;">
         <h2 class="text-3xl md:text-4xl font-bold text-white">Parcours <span class="text-gradient">Professionnel</span></h2>
         <div class="h-[1px] bg-white/10 flex-grow"></div>
       </div>
       <div class="relative max-w-3xl mx-auto">
-        <div class="absolute left-4 md:left-6 top-0 bottom-0 w-[2px] bg-white/10"></div>
+        <div class="absolute left-4 md:left-6 top-0 bottom-0 w-[2px] bg-white/10 reveal" data-animate style="--delay: 0.05s"></div>
         <div class="flex flex-col gap-10">
           
-          <div class="relative pl-12 md:pl-16 group">
+          <div class="relative pl-12 md:pl-16 group reveal" data-animate style="--delay: 0.05s;">
             <div class="absolute left-0 md:left-2 top-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-background-dark border-2 border-primary z-20 flex items-center justify-center">
               <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
             </div>
@@ -85,7 +98,7 @@
             </div>
           </div>
 
-          <div class="relative pl-12 md:pl-16 group">
+          <div class="relative pl-12 md:pl-16 group reveal" data-animate style="--delay: 0.15s;">
             <div class="absolute left-0 md:left-2 top-2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-background-dark border-2 border-slate-600 group-hover:border-primary flex items-center justify-center z-10 transition-colors">
               <span class="material-symbols-outlined text-white text-sm">construction</span>
             </div>
@@ -116,12 +129,12 @@
     </section>
 
     <section class="py-12" id="education">
-        <div class="flex items-center gap-4 mb-10">
+        <div class="flex items-center gap-4 mb-10 reveal" data-animate style="--delay: 0s;">
             <h2 class="text-3xl md:text-4xl font-bold text-white">Formation & <span class="text-gradient">Diplômes</span></h2>
             <div class="h-[1px] bg-white/10 flex-grow"></div>
         </div>
         <div class="grid md:grid-cols-3 gap-6">
-            <div class="group bg-surface-dark rounded-2xl p-1 border border-primary/40 bg-gradient-to-br from-primary/10 to-transparent">
+          <div class="group bg-surface-dark rounded-2xl p-1 border border-primary/40 bg-gradient-to-br from-primary/10 to-transparent reveal" data-animate style="--delay: 0.05s;">
                 <div class="bg-background-dark/50 backdrop-blur-sm rounded-xl p-6 h-full">
                     <span class="text-xs font-mono text-primary mb-1 block">2025 — 2027</span>
                     <h3 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Mastère MAALSI</h3>
@@ -129,7 +142,7 @@
                     <p class="text-slate-500 text-xs mt-3 italic">Manager en Architecture Logicielle</p>
                 </div>
             </div>
-            <div class="group bg-surface-dark rounded-2xl p-1 border border-white/5 hover:border-primary/50 transition-all">
+          <div class="group bg-surface-dark rounded-2xl p-1 border border-white/5 hover:border-primary/50 transition-all reveal" data-animate style="--delay: 0.12s;">
                 <div class="bg-background-dark/50 rounded-xl p-6 h-full">
                     <span class="text-xs font-mono text-slate-500 mb-1 block">2024 — 2025</span>
                     <h3 class="text-lg font-bold text-white">Bachelor CDA</h3>
@@ -137,7 +150,7 @@
                     <p class="text-slate-500 text-xs mt-3 italic">Concepteur Développeur d'Applications</p>
                 </div>
             </div>
-            <div class="group bg-surface-dark rounded-2xl p-1 border border-white/5 hover:border-primary/50 transition-all relative">
+          <div class="group bg-surface-dark rounded-2xl p-1 border border-white/5 hover:border-primary/50 transition-all relative reveal" data-animate style="--delay: 0.19s;">
                 <div class="absolute top-5 right-4 z-10">
                     <span class="bg-primary/10 text-primary border border-primary/20 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
                         Major Académique
@@ -155,34 +168,34 @@
     </section>
 
     <section class="py-12" id="skills">
-      <div class="flex items-center gap-4 mb-10">
+      <div class="flex items-center gap-4 mb-10 reveal" data-animate style="--delay: 0s;">
         <h2 class="text-3xl md:text-4xl font-bold text-white">Expertise & <span class="text-gradient">Skills</span></h2>
         <div class="h-[1px] bg-white/10 flex-grow"></div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <div class="bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors group">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 reveal reveal-group" data-animate style="--delay: 0s;">
+        <div class="bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors group" data-animate-child style="--delay: 0s;">
           <div class="flex justify-between items-start mb-4">
             <div class="bg-white/5 p-3 rounded-lg text-blue-400"><span class="material-symbols-outlined">code_blocks</span></div>
           </div>
           <h3 class="text-white font-bold text-lg mb-2">Web / Front</h3>
           <p class="text-slate-400 text-sm">VueJS, Angular, HTML, CSS, JS, Jquery.</p>
         </div>
-        <div class="bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors group">
+        <div class="bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors group" data-animate-child style="--delay: 0.2s;">
           <div class="flex justify-between items-start mb-4">
             <div class="bg-white/5 p-3 rounded-lg text-primary"><span class="material-symbols-outlined">dns</span></div>
           </div>
           <h3 class="text-white font-bold text-lg mb-2">Back-end</h3>
           <p class="text-slate-400 text-sm">PHP, Symfony, Python, MySQL, Postgres, NestJS.</p>
         </div>
-        <div class="bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors group">
+        <div class="bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors group" data-animate-child style="--delay: 0.4s;">
           <div class="flex justify-between items-start text-green-400 mb-4">
             <div class="bg-white/5 p-3 rounded-lg "><span class="material-symbols-outlined">smartphone</span></div>
           </div>
           <h3 class="text-white font-bold text-lg mb-2">Logiciel & Mobile</h3>
           <p class="text-slate-400 text-sm">Windev, Flutter, Electron, Capacitor.</p>
         </div>
-        <div class="bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors group">
+        <div class="bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-colors group" data-animate-child style="--delay: 0.6s;">
           <div class="flex justify-between items-start mb-4">
             <div class="bg-white/5 p-3 rounded-lg text-yellow-400"><span class="material-symbols-outlined">api</span></div>
           </div>
@@ -191,7 +204,7 @@
         </div>
       </div>
 
-      <div class="flex flex-wrap gap-3 justify-center">
+      <div class="flex flex-wrap gap-3 justify-center reveal" data-animate style="--delay: 0.1s;">
         <span class="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-slate-300 text-sm flex items-center gap-2 hover:border-primary hover:text-primary transition-colors">
           <span class="material-symbols-outlined text-xs">done_all</span> Autonome
         </span>
@@ -214,7 +227,7 @@
     </section>
 
     <section class="py-12" id="awards">
-    <div class="flex items-center gap-4 mb-10">
+    <div class="flex items-center gap-4 mb-10 reveal" data-animate style="--delay: 0s;">
         <h2 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-tighter">
             WORLDSKILLS <span class="text-gradient">WEB TECHNOLOGIES</span>
         </h2>
@@ -223,7 +236,7 @@
 
     <div class="grid md:grid-cols-2 gap-8 items-stretch">
         <div class="flex flex-col gap-6">
-            <div class="bg-surface-dark border border-white/5 p-8 rounded-3xl h-full relative overflow-hidden group">
+          <div class="bg-surface-dark border border-white/5 p-8 rounded-3xl h-full relative overflow-hidden group reveal" data-animate style="--delay: 0.05s;">
                 <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
                 
                 <div class="relative z-10 flex flex-col h-full justify-between">
@@ -256,7 +269,7 @@
         </div>
 
         <div class="flex flex-col gap-6">
-            <div class="bg-surface-dark border border-white/5 p-4 rounded-3xl h-full group hover:border-primary/30 transition-all">
+          <div class="bg-surface-dark border border-white/5 p-4 rounded-3xl h-full group hover:border-primary/30 transition-all reveal" data-animate style="--delay: 0.12s;">
                 <div class="relative aspect-video rounded-2xl overflow-hidden mb-4 shadow-2xl">
                     <iframe 
                         class="absolute inset-0 w-full h-full"
@@ -280,7 +293,7 @@
 </section>
 
     <section class="mt-20 border-t border-white/10 pt-16" id="contact">
-      <div class="bg-surface-dark rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden border border-white/5 shadow-2xl">
+      <div class="bg-surface-dark rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden border border-white/5 shadow-2xl reveal" data-animate style="--delay: 0s;">
         <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-primary/20 rounded-full blur-[80px] pointer-events-none"></div>
         <div class="z-10 text-center md:text-left">
           <h2 class="text-3xl font-bold text-white mb-2">Prêt à collaborer ?</h2>
@@ -300,5 +313,30 @@
     </section>
   </div>
 </main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const bgTarget = document.querySelector('[data-bg-src]');
+    if (!bgTarget) return;
+
+    const imgLayer = bgTarget.querySelector('[data-bg-image]');
+    const placeholder = bgTarget.querySelector('[data-bg-placeholder]');
+    const source = bgTarget.getAttribute('data-bg-src');
+    if (!source || !imgLayer) return;
+
+    const img = new Image();
+
+    img.src = source;
+    img.onload = () => {
+      imgLayer.style.backgroundImage = `url('${img.src}')`;
+      if (placeholder) placeholder.classList.add('opacity-0');
+      imgLayer.classList.add('opacity-100');
+    };
+    img.onerror = () => {
+      // If the image fails, keep the placeholder visible instead of flashing empty.
+      if (placeholder) placeholder.classList.remove('opacity-0');
+    };
+  });
+</script>
 
 <?php include __DIR__ . '/partials/footer.php'; ?>

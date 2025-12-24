@@ -154,6 +154,8 @@ html.light body { background: var(--color-bg-light); color: #0f0f0f; }
 .reveal.in-view { opacity: 1; transform: translateY(0); }
 .reveal.scale { transform: translateY(24px) scale(.98); }
 .reveal.scale.in-view { transform: translateY(0) scale(1); }
+.reveal-group [data-animate-child] { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; transition-delay: var(--delay, 0s); }
+.reveal-group.in-view [data-animate-child] { opacity: 1; transform: translateY(0); }
 
 /* Hover zoom pour cartes cinéma */
 .hover-zoom { position: relative; overflow: hidden; }
