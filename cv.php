@@ -18,11 +18,11 @@
             </p>
           </div>
           <div class="flex flex-wrap gap-4 mt-2">
-            <a href="projets.php" class="h-12 px-6 rounded-lg bg-primary hover:bg-primary/90 text-white font-bold transition-all shadow-[0_0_20px_rgba(238,43,238,0.4)] flex items-center gap-2 group">
+            <a href="projets" class="h-12 px-6 rounded-lg bg-primary hover:bg-primary/90 text-white font-bold transition-all shadow-[0_0_20px_rgba(238,43,238,0.4)] flex items-center gap-2 group">
               <span>Voir mes projets</span>
               <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </a>
-            <a href="contact.php" class="h-12 px-6 rounded-lg bg-surface-dark border border-white/10 hover:bg-surface-dark-hover text-white font-medium transition-colors flex items-center justify-center">
+            <a href="contact" class="h-12 px-6 rounded-lg bg-surface-dark border border-white/10 hover:bg-surface-dark-hover text-white font-medium transition-colors flex items-center justify-center">
               Me contacter
             </a>
           </div>
@@ -287,7 +287,7 @@
           <p class="text-slate-400">Basé à Besançon, France</p>
         </div>
         <div class="flex flex-col sm:flex-row gap-4 z-10">
-          <a href="contact.php" class="flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-white text-background-dark font-bold hover:bg-slate-200 transition-colors">
+          <a href="contact" class="flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-white text-background-dark font-bold hover:bg-slate-200 transition-colors">
             <span class="material-symbols-outlined">mail</span>
             <span>Contact</span>
           </a>

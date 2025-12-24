@@ -9,7 +9,7 @@
           <a href="https://www.linkedin.com/in/esteban-racine" target="_blank" aria-label="LinkedIn" class="text-[var(--color-text-muted)] hover:text-white transition-colors">
             <span class="material-symbols-outlined">link</span>
           </a>
-          <a href="contact.php" aria-label="Email" class="text-[var(--color-text-muted)] hover:text-white transition-colors">
+          <a href="contact" aria-label="Email" class="text-[var(--color-text-muted)] hover:text-white transition-colors">
             <span class="material-symbols-outlined">mail</span>
           </a>
         </div>

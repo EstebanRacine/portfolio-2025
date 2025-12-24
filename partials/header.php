@@ -56,7 +56,7 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
   <body class="bg-[var(--color-bg-light)] dark:bg-[var(--color-bg-dark)] text-slate-900 dark:text-white font-display min-h-screen overflow-x-hidden">
     <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-[var(--color-border-dark)] bg-[#181118]/80">
       <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
-        <a href="index.php" class="flex items-center gap-3 text-white">
+        <a href="index" class="flex items-center gap-3 text-white">
           <div class="size-8 flex items-center justify-center rounded bg-[var(--color-primary)]/20 text-[var(--color-primary)]">
             <span class="material-symbols-outlined text-[20px]">terminal</span>
           </div>
@@ -66,11 +66,11 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
           <span class="material-symbols-outlined">menu</span>
         </button>
         <div id="navMenu" class="hidden md:flex items-center gap-8 transition-all">
-          <a class="relative text-sm <?= is_active('index.php',$current) ?>" href="index.php">Accueil</a>
-          <a class="relative text-sm <?= is_active('projets.php',$current) ?>" href="projets.php">Projets</a>
-          <a class="relative text-sm <?= is_active('cv.php',$current) ?>" href="cv.php">CV</a>
-          <a class="relative text-sm <?= is_active('passions.php',$current) ?>" href="passions.php">Passions</a>
-          <a class="relative text-sm <?= is_active('contact.php',$current) ?>" href="contact.php">Contact</a>
+          <a class="relative text-sm <?= is_active('index.php',$current) ?>" href="index">Accueil</a>
+          <a class="relative text-sm <?= is_active('projets.php',$current) ?>" href="projets">Projets</a>
+          <a class="relative text-sm <?= is_active('cv.php',$current) ?>" href="cv">CV</a>
+          <a class="relative text-sm <?= is_active('passions.php',$current) ?>" href="passions">Passions</a>
+          <a class="relative text-sm <?= is_active('contact.php',$current) ?>" href="contact">Contact</a>
           <a
             href="assets/docs/CV_Esteban_Racine.pdf"
             download
@@ -84,11 +84,11 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
       </div>
       <div id="navMenuMobile" class="md:hidden hidden border-t border-[var(--color-border-dark)] bg-[#181118]">
         <div class="px-5 py-3 flex flex-col gap-3">
-          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'index.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="index.php">Accueil</a>
-          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'projets.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="projets.php">Projets</a>
-          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'cv.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="cv.php">CV</a>
-          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'passions.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="passions.php">Passions</a>
-          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'contact.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="contact.php">Contact</a>
+          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'index.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="index">Accueil</a>
+          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'projets.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="projets">Projets</a>
+          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'cv.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="cv">CV</a>
+          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'passions.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="passions">Passions</a>
+          <a class="text-sm py-2 px-3 rounded-lg transition-colors <?= $current === 'contact.php' ? 'bg-primary/20 text-white font-semibold' : 'text-slate-300 hover:bg-white/5' ?>" href="contact">Contact</a>
         </div>
       </div>
     </nav>

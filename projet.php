@@ -46,7 +46,7 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
 
 <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-[var(--color-border-dark)] bg-[#181118]/80">
   <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
-    <a href="index.php" class="flex items-center gap-3 text-white">
+    <a href="index" class="flex items-center gap-3 text-white">
       <div class="size-8 flex items-center justify-center rounded bg-[var(--color-primary)]/20 text-[var(--color-primary)]">
         <span class="material-symbols-outlined text-[20px]">terminal</span>
       </div>
@@ -56,11 +56,11 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
       <span class="material-symbols-outlined">menu</span>
     </button>
     <div id="navMenu" class="hidden md:flex items-center gap-8 transition-all">
-      <a class="relative text-sm <?= is_active('index.php',$current) ?>" href="index.php">Accueil</a>
-      <a class="relative text-sm <?= is_active('projets.php',$current) ?>" href="projets.php">Projets</a>
-      <a class="relative text-sm <?= is_active('cv.php',$current) ?>" href="cv.php">CV</a>
-      <a class="relative text-sm <?= is_active('passions.php',$current) ?>" href="passions.php">Passions</a>
-      <a class="relative text-sm <?= is_active('contact.php',$current) ?>" href="contact.php">Contact</a>
+      <a class="relative text-sm <?= is_active('index.php',$current) ?>" href="index">Accueil</a>
+      <a class="relative text-sm <?= is_active('projets.php',$current) ?>" href="projets">Projets</a>
+      <a class="relative text-sm <?= is_active('cv.php',$current) ?>" href="cv">CV</a>
+      <a class="relative text-sm <?= is_active('passions.php',$current) ?>" href="passions">Passions</a>
+      <a class="relative text-sm <?= is_active('contact.php',$current) ?>" href="contact">Contact</a>
       <button class="flex items-center justify-center gap-2 rounded-lg h-9 px-4 bg-primary hover:bg-primary/90 transition-all text-white text-sm font-bold tracking-wide shadow-[0_0_15px_rgba(238,43,238,0.3)]">
         <span class="material-symbols-outlined text-[18px]">download</span>
         <span>Mon CV</span>
@@ -69,11 +69,11 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
   </div>
   <div id="navMenuMobile" class="md:hidden hidden border-t border-[var(--color-border-dark)] bg-[#181118]">
     <div class="px-5 py-3 flex flex-col gap-3">
-      <a class="text-sm py-2 px-3 rounded-lg transition-colors text-slate-300 hover:bg-white/5" href="index.php">Accueil</a>
-      <a class="text-sm py-2 px-3 rounded-lg transition-colors bg-primary/20 text-white font-semibold" href="projets.php">Projets</a>
-      <a class="text-sm py-2 px-3 rounded-lg transition-colors text-slate-300 hover:bg-white/5" href="cv.php">CV</a>
-      <a class="text-sm py-2 px-3 rounded-lg transition-colors text-slate-300 hover:bg-white/5" href="passions.php">Passions</a>
-      <a class="text-sm py-2 px-3 rounded-lg transition-colors text-slate-300 hover:bg-white/5" href="contact.php">Contact</a>
+      <a class="text-sm py-2 px-3 rounded-lg transition-colors text-slate-300 hover:bg-white/5" href="index">Accueil</a>
+      <a class="text-sm py-2 px-3 rounded-lg transition-colors bg-primary/20 text-white font-semibold" href="projets">Projets</a>
+      <a class="text-sm py-2 px-3 rounded-lg transition-colors text-slate-300 hover:bg-white/5" href="cv">CV</a>
+      <a class="text-sm py-2 px-3 rounded-lg transition-colors text-slate-300 hover:bg-white/5" href="passions">Passions</a>
+      <a class="text-sm py-2 px-3 rounded-lg transition-colors text-slate-300 hover:bg-white/5" href="contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -87,7 +87,7 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
     </div>
     
     <div class="max-w-[1200px] mx-auto px-4 md:px-10 relative z-10">
-      <a href="projets.php" class="inline-flex items-center gap-2 text-[var(--color-text-muted)] hover:text-primary transition-colors mb-8 reveal" data-animate style="--delay: 0s;">
+      <a href="projets" class="inline-flex items-center gap-2 text-[var(--color-text-muted)] hover:text-primary transition-colors mb-8 reveal" data-animate style="--delay: 0s;">
         <span class="material-symbols-outlined">arrow_back</span>
         <span>Retour aux projets</span>
       </a>
@@ -221,7 +221,7 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
     <div class="border-t border-white/10 pt-12 reveal" data-animate style="--delay: 0s;">
       <h3 class="text-2xl font-bold text-white mb-8 text-center">Autres projets</h3>
       <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="projets.php" class="flex-1 max-w-sm px-6 py-4 rounded-xl bg-surface-dark border border-[var(--color-border-dark)] hover:border-primary transition-all group">
+        <a href="projets" class="flex-1 max-w-sm px-6 py-4 rounded-xl bg-surface-dark border border-[var(--color-border-dark)] hover:border-primary transition-all group">
           <div class="flex items-center justify-between">
             <div>
               <p class="text-xs text-[var(--color-text-muted)] mb-1">Voir tous</p>
@@ -230,7 +230,7 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
             <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </div>
         </a>
-        <a href="contact.php" class="flex-1 max-w-sm px-6 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-transform group shadow-lg shadow-purple-500/25">
+        <a href="contact" class="flex-1 max-w-sm px-6 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-transform group shadow-lg shadow-purple-500/25">
           <div class="flex items-center justify-between">
             <div>
               <p class="text-xs text-white/80 mb-1">Intéressé ?</p>
@@ -272,7 +272,7 @@ function is_active($name, $current) { return $current === $name ? 'text-white fo
       <a href="#" aria-label="LinkedIn" class="text-[var(--color-text-muted)] hover:text-white transition-colors">
         <span class="material-symbols-outlined">link</span>
       </a>
-      <a href="contact.php" aria-label="Email" class="text-[var(--color-text-muted)] hover:text-white transition-colors">
+      <a href="contact" aria-label="Email" class="text-[var(--color-text-muted)] hover:text-white transition-colors">
         <span class="material-symbols-outlined">mail</span>
       </a>
     </div>
@@ -290,7 +290,7 @@ $(function() {
   const project = getProjectById(projectId);
   
   if (!project) {
-    window.location.href = 'projets.php';
+    window.location.href = 'projets';
     return;
   }
   

@@ -59,11 +59,11 @@
           <p class="text-[var(--color-text-muted)]">Discutons de vos idées et créons quelque chose d'incroyable ensemble.</p>
         </div>
         <div class="flex flex-col sm:flex-row gap-4 z-10">
-          <a href="contact.php" class="px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold shadow-lg hover:shadow-purple-500/40 hover:scale-105 transition-all flex items-center justify-center gap-2">
+          <a href="contact" class="px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold shadow-lg hover:shadow-purple-500/40 hover:scale-105 transition-all flex items-center justify-center gap-2">
             <span>Me contacter</span>
             <span class="material-symbols-outlined">send</span>
           </a>
-          <a href="cv.php" class="px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+          <a href="cv" class="px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-all flex items-center justify-center gap-2">
             <span>Voir mon CV</span>
             <span class="material-symbols-outlined">description</span>
           </a>

@@ -23,7 +23,7 @@
         En savoir plus
         <i class="fas fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
       </a>
-      <a class="px-8 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-bold shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 transition-all" href="projets.php">
+      <a class="px-8 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-bold shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 transition-all" href="projets">
         Voir mes projets
       </a>
     </div>
@@ -42,10 +42,10 @@
       </p>
 
       <div class="mt-6 flex gap-3 reveal" data-animate style="--delay: 0.24s;">
-        <a href="cv.php" class="h-10 px-5 rounded-lg bg-primary text-white font-bold flex items-center justify-center hover:bg-primary/90 transition-all">
+        <a href="cv" class="h-10 px-5 rounded-lg bg-primary text-white font-bold flex items-center justify-center hover:bg-primary/90 transition-all">
           Voir mon CV
         </a>
-        <a href="contact.php" class="h-10 px-5 rounded-lg bg-surface-dark border border-[var(--color-border-dark)] text-white font-medium flex items-center justify-center hover:border-primary transition-all">
+        <a href="contact" class="h-10 px-5 rounded-lg bg-surface-dark border border-[var(--color-border-dark)] text-white font-medium flex items-center justify-center hover:border-primary transition-all">
           Me contacter
         </a>
       </div>
@@ -62,7 +62,7 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex items-center justify-between mb-8 reveal" data-animate style="--delay: 0s;">
       <h2 class="text-3xl font-bold">Sélection <span class="text-gradient">de projets</span></h2>
-      <a href="projets.php" class="text-sm text-[var(--color-text-muted)] hover:text-white">Tout voir</a>
+      <a href="projets" class="text-sm text-[var(--color-text-muted)] hover:text-white">Tout voir</a>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <a href="projet.php?id=1" class="group relative rounded-xl overflow-hidden border border-[var(--color-border-dark)] bg-surface-dark hover:border-primary transition-all reveal" data-animate style="--delay: 0.08s;">
