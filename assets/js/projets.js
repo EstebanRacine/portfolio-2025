@@ -416,7 +416,7 @@ const projets = [
       "assets/img/projects/menotey/menotey-paiement.png",
     ], 
     features: [
-      'Développement assisté par IA (Copilot) pour l\'optimisation algorithmique',
+      'Développement assisté par IA (Copilot) pour l\'optimisation du développement',
       'Tunnel d\'achat complet : Catalogue → Panier → Paiement',
       'Intégration de Stripe (Mode Test) avec gestion des Webhooks',
       'Interface moderne avec animations fluides au scroll',

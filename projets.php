@@ -46,12 +46,12 @@
     </section>
 
     <!-- Grille de projets -->
-    <section id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal" data-animate style="--delay: 0.32s;">
       <!-- Les projets seront chargés dynamiquement via JavaScript -->
     </section>
 
     <!-- CTA Contact -->
-    <section class="mt-20 border-t border-white/10 pt-16">
+    <section class="mt-20 border-t border-white/10 pt-16 reveal" data-animate style="--delay: 0.4s;">
       <div class="bg-surface-dark rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden border border-white/5 shadow-2xl reveal" data-animate style="--delay: 0s;">
         <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-primary/20 rounded-full blur-[80px] pointer-events-none"></div>
         <div class="z-10 text-center md:text-left">
