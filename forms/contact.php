@@ -1,4 +1,10 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// PHPMailer est installé par Composer dans l'image Docker, hors du webroot
+require '/opt/composer/vendor/autoload.php';
+
 header('Content-Type: application/json; charset=utf-8');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -22,8 +28,18 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 	exit;
 }
 
-$to          = 'esteban.racineecole@gmail.com';
-$fullSubject = 'Contact Portfolio: ' . $subject;
+$to          = getenv('CONTACT_TO') ?: 'esteban.racineecole@gmail.com';
+$fullSubject = 'Contact Portfolio: ' . str_replace(["\r", "\n"], ' ', $subject);
+
+// Échappement des saisies avant injection dans le template HTML
+$h = fn(string $v): string => htmlspecialchars($v, ENT_QUOTES, 'UTF-8');
+$hFn      = $h($fn);
+$hLn      = $h($ln);
+$hEmail   = $h($email);
+$hSubject = $h($subject);
+$hMessage = $h($message);
+$uEmail   = $h(rawurlencode($email));
+$uSubject = $h(rawurlencode('Re: ' . $subject));
 
 // Template HTML pour l'email
 $body = <<<HTML
@@ -100,17 +116,17 @@ $body = <<<HTML
                                 <table class="info-table" style="width: 100%; border-collapse: collapse;">
                                     <tr>
                                         <td style="padding: 10px 0; color: #c4b5fd; font-size: 13px; font-weight: 600; width: 70px; text-transform: uppercase;">Nom :</td>
-                                        <td style="padding: 10px 0; color: #f3e8ff; font-size: 14px; font-weight: 600;">{$fn} {$ln}</td>
+                                        <td style="padding: 10px 0; color: #f3e8ff; font-size: 14px; font-weight: 600;">{$hFn} {$hLn}</td>
                                     </tr>
                                     <tr>
                                         <td style="padding: 10px 0; color: #c4b5fd; font-size: 13px; font-weight: 600; text-transform: uppercase;">Email :</td>
                                         <td style="padding: 10px 0;">
-                                            <a href="mailto:{$email}" style="color: #a78bfa; text-decoration: none; font-weight: 600; word-break: break-all; transition: color 0.2s;">{$email}</a>
+                                            <a href="mailto:{$uEmail}" style="color: #a78bfa; text-decoration: none; font-weight: 600; word-break: break-all; transition: color 0.2s;">{$hEmail}</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="padding: 10px 0; color: #c4b5fd; font-size: 13px; font-weight: 600; text-transform: uppercase;">Sujet :</td>
-                                        <td style="padding: 10px 0; color: #f3e8ff; font-size: 14px; font-weight: 700;">{$subject}</td>
+                                        <td style="padding: 10px 0; color: #f3e8ff; font-size: 14px; font-weight: 700;">{$hSubject}</td>
                                     </tr>
                                 </table>
                             </div>
@@ -121,13 +137,13 @@ $body = <<<HTML
                                     <span style="font-size: 18px; margin-right: 10px;">💬</span> Message
                                 </h2>
                                 <div class="message-box" style="background: linear-gradient(135deg, #2e1a47 0%, #25142f 100%); border-radius: 18px; padding: 24px; border: 1px solid rgba(139, 92, 246, 0.4);">
-                                    <p style="margin: 0; color: #e0e7ff; font-size: 15px; line-height: 1.8; white-space: pre-wrap; word-wrap: break-word;">{$message}</p>
+                                    <p style="margin: 0; color: #e0e7ff; font-size: 15px; line-height: 1.8; white-space: pre-wrap; word-wrap: break-word;">{$hMessage}</p>
                                 </div>
                             </div>
                             
                             <!-- Bouton d'action -->
                             <div style="text-align: center; margin: 40px 0 0 0;">
-                                <a href="mailto:{$email}?subject=Re: {$subject}" class="button-action" style="display: inline-block; background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #7c3aed 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 12px; font-weight: 700; font-size: 15px; box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2); text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s;">
+                                <a href="mailto:{$uEmail}?subject={$uSubject}" class="button-action" style="display: inline-block; background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #7c3aed 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 12px; font-weight: 700; font-size: 15px; box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2); text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s;">
                                     📧 Répondre
                                 </a>
                             </div>
@@ -155,16 +171,30 @@ $body = <<<HTML
 </html>
 HTML;
 
-$headers   = [];
-$headers[] = 'MIME-Version: 1.0';
-$headers[] = 'Content-type: text/html; charset=utf-8';
-$headers[] = 'From: Portfolio Esteban Racine <no-reply@localhost>';
-$headers[] = 'Reply-To: ' . $email;
+$mail = new PHPMailer(true);
 
-$sent = @mail($to, $fullSubject, $body, implode("\r\n", $headers));
+try {
+	$mail->isSMTP();
+	$mail->Host       = getenv('SMTP_HOST') ?: 'smtp.gmail.com';
+	$mail->Port       = (int) (getenv('SMTP_PORT') ?: 465);
+	$mail->SMTPAuth   = true;
+	$mail->Username   = getenv('SMTP_USER');
+	$mail->Password   = getenv('SMTP_PASS');
+	$mail->SMTPSecure = $mail->Port === 465 ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
+	$mail->CharSet    = 'UTF-8';
 
-if ($sent) {
+	$mail->setFrom(getenv('SMTP_USER'), 'Portfolio Esteban Racine');
+	$mail->addAddress($to);
+	$mail->addReplyTo($email, "$fn $ln");
+
+	$mail->isHTML(true);
+	$mail->Subject = $fullSubject;
+	$mail->Body    = $body;
+	$mail->AltBody = "De : $fn $ln <$email>\nSujet : $subject\n\n$message";
+
+	$mail->send();
 	echo json_encode(['ok' => true]);
-} else {
-	echo json_encode(['ok' => false, 'error' => "L'envoi a échoué. Vous pouvez envoyer un mail manuellement à esteban.racineecole@gmail.com."]);
+} catch (Exception $e) {
+	error_log('contact.php: ' . $mail->ErrorInfo);
+	echo json_encode(['ok' => false, 'error' => "L'envoi a échoué. Vous pouvez envoyer un mail manuellement à $to."]);
 }
