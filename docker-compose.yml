@@ -1,0 +1,13 @@
+services:
+  portfolio:
+    build: .
+    container_name: portfolio
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - web-network
+
+networks:
+  web-network:
+    external: true

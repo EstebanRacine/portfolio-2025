@@ -4,7 +4,10 @@ AddDefaultCharset UTF-8
   Header set X-Content-Type-Options "nosniff"
 </IfModule>
 
+RewriteEngine On
 
-# RewriteEngine On
-# RewriteCond %{SERVER_PORT} 80
-# RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# Règle globale : redirige n'importe quelle URL sans extension vers son équivalent .php
+# (uniquement si le fichier .php existe physiquement et que ce n'est pas un dossier)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
